@@ -1,18 +1,30 @@
 import Vue from 'vue'
-import App from './App.vue'
-import Buefy from 'buefy'
 import Vuex from 'vuex'
+import VueLodash from 'vue-lodash'
+import VueRouter from 'vue-router'
+
+import routes from './routes'
+import App from './App.vue'
 import { store } from './store/store.js'
+
 import axios from 'axios'
+import 'normalize.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
-import 'buefy/dist/buefy.css'
-
+Vue.use(VueRouter)
 Vue.use(Vuex)
-Vue.use(Buefy)
+Vue.use(VueLodash)
+
+const router = new VueRouter({
+  mode: 'history',
+  routes
+});
+
 window.axios = axios
 Vue.config.productionTip = false
 
-new Vue({
+window.vm = new Vue({
   render: h => h(App),
+  router,
   store
 }).$mount('#app')

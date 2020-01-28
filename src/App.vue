@@ -1,35 +1,56 @@
 <template>
   <div id="app">
-    <ul>
-      <li v-for="{ title } in news" :key="title">{{ title }}</li>
-    </ul>
+    <Header></Header>
+    <main class="page">
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
 <script>
+import Header from "@/components/header"
 
 export default {
-  name: 'app',
-  computed: {
-    news() {
-      return this.$store.state.news
-    }
-  },
-  mounted() {
-     this.$store.dispatch('LOAD_NEWS')
-  },
+  name: "app",
   components: {
-    
+    Header
   }
-}
+};
 </script>
 
-<style>
+<style lang="scss">
+  body {
+    background: $bg-color;
+    font-family: "Poppins", sans-serif;
+  }
 
-li {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #000;
-}
+  a {
+    text-decoration: none;
+  }
 
+  .wrapper {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1345px;
+  }
+
+  .page {
+    margin-top: 50px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content {
+      flex: 1;
+      margin-right: 50px;
+    }
+
+    &__side-bar {
+      width: 25%;
+      max-width: 345px;
+    }
+  }
 </style>
