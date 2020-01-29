@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueLodash from 'vue-lodash'
 import VueRouter from 'vue-router'
+import VBodyScrollLock from 'v-body-scroll-lock'
 
 import routes from './routes'
 import App from './App.vue'
@@ -14,6 +15,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 Vue.use(VueRouter)
 Vue.use(Vuex)
 Vue.use(VueLodash)
+Vue.use(VBodyScrollLock)
 
 const router = new VueRouter({
   mode: 'history',

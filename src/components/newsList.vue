@@ -1,16 +1,28 @@
 <template>
     <div>
         <ul class="news-list">
-            <newsBit class="news-list__item" v-for="bit in news" :bit="bit" :key="bit.title"></newsBit>
+            <newsBit 
+                class="news-list__item"
+                v-for="bit in filterNews"
+                :bit="bit"
+                :key="bit.title"></newsBit>
         </ul>
     </div>
 </template>
 
 <script>
 import NewsBit from '@/components/newsBit'
+import { mapGetters } from 'vuex'
 
 export default {
-    props: ['news'],
+    computed: {
+        ...mapGetters([
+            'filterNews'
+        ])
+    },
+    methods: {
+
+    },
     components: {
         NewsBit
     }
