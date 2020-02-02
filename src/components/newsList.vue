@@ -39,14 +39,14 @@ export default {
     
         &__item {
             background: $news-bit-background;
-            flex: 0 1 49%;
+            flex: 0 1 32%;
             margin-bottom: 20px;
-            padding: 25px;
             box-sizing: border-box;
         }
 
-        &__item:nth-child(even) {
-            margin-left: 2%
+        &__item:nth-of-type(3n+2) {
+            margin-left: 2%;
+            margin-right: 2%;
         }
     }
 </style>

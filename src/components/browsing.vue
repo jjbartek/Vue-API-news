@@ -19,12 +19,13 @@
         <div v-if="!pageLoaded" class="browsing__loading">
             <Loader loading="!pageLoaded"></Loader>
         </div>
-        <embed 
+        <iframe 
             class="browsing__content" 
             :src="browsingData.url" 
             @load="pageLoaded = true"
             width="100%" 
-            height="100%">
+            height="100%"
+            sandbox="allow-scripts allow-top-navigation-by-user-activation allow-same-origin"></iframe>
     </div>
 </template>
 
@@ -70,6 +71,7 @@ export default {
 <style lang="scss">
     .browsing {
         position: fixed;
+        z-index: 9999;
         top: 0;
         bottom: 0;
         left: 0;
@@ -87,6 +89,10 @@ export default {
             display: flex;
             align-items: center;
             border-radius: 0 0 20px 0;
+        }
+
+        &__content {
+            border: 0;
         }
 
         &__container {
