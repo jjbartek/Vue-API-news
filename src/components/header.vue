@@ -4,7 +4,7 @@
             <div class="wrapper nav__wrapper">
                 <div class="nav__logo">
                     <router-link to="/" class="logo">
-                        <img src="logo.png" class="logo__img">
+                        <img src="/logo.png" class="logo__img">
                         <span class="logo__text">VUE News</span>
                     </router-link>
                 </div>

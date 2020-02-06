@@ -9,7 +9,12 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    page: "",
+    page: {
+      type: '',
+      keywords: ''
+    },
+    apiUrl: "https://newsapi.org/v2",
+    apiKey: '1a35f1130398454d8244a1d7092ddcd6',
     loadingStatus: false,
     browsingMode: false,
     browsingData: {},

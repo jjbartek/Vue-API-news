@@ -16,3 +16,13 @@ $news-bit-background: #fff;
 /** SEARCH BOX **/
 $search-button-background: #41b883;
 $search-color-background: #fff;
+
+
+/** RESPONSIVENESS **/
+$break-small: 768px;
+$break-medium: 992px; 
+$break-large: 1200px;
+
+$small-screens: "screen and (max-width: #{$break-small})";
+$medium-screens: "screen and (max-width: #{$break-medium})";
+$large-screens: "screen and (max-width: #{$break-large})";

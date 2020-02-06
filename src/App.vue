@@ -20,6 +20,6 @@ export default {
 
 <style lang="scss">
 @import "scss/_helpers";
-@import "scss/buttons";
+@import "scss/form";
 @import "scss/main";
 </style>

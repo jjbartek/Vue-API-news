@@ -1,27 +1,22 @@
 <template>
   <div class="wrapper page__wrapper">
-    <div class="page__content">
+    <div class="page__content page__content--full-width">
+        <h1 class="headline--page-title"><i class="fas fa-search"></i> Search results</h1>
         <Browsing v-if="browsingMode" v-body-scroll-lock="browsingMode"></Browsing>
         <NewsList v-if="!isLoading"></NewsList>
         <Loader :loading="isLoading"></Loader>
     </div>
-    <Sidebar class="page__side-bar"></Sidebar>
   </div>
 </template>
 
 <script>
-import NewsList from "@/components/newsList"
-import Browsing from "@/components/browsing"
-import Loader from "@/components/loader"
-import Sidebar from "@/components/sidebar"
-import { mapGetters, mapState, mapActions } from "vuex"
+import NewsList from '@/components/newsList'
+import Browsing from '@/components/browsing'
+import Loader from '@/components/loader'
+import { mapGetters, mapState, mapActions } from 'vuex'
 
 export default {
-    props: ['page'],
     computed: {
-        currentPage() {
-            return this.page
-        },
         ...mapState({
             browsingData: state => state.browsingData,
             browsingMode: state => state.browsingMode
@@ -35,10 +30,10 @@ export default {
             updatePage: 'UPDATE_PAGE',
             updateNews: 'UPDATE_NEWS'
         }),
-        loadNews() {
+        loadNews() { 
             this.updatePage({
-                type: 'news-list', 
-                keywords: this.currentPage
+                type: 'search-results', 
+                keywords: this.$route.params.keywords 
             })
             this.updateNews()
         }
@@ -52,7 +47,7 @@ export default {
         }
     },
     components: {
-        NewsList, Browsing, Loader, Sidebar
+        NewsList, Browsing, Loader
     }
 }
 </script>

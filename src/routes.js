@@ -1,28 +1,34 @@
-import newsPage from './components/pages/newsPage'
+import newsPage from '@/components/pages/newsPage'
+import searchResults from '@/components/pages/searchResults'
 
 export default [
     {
         path: '/',
         component: newsPage,
-        name: 'Home',
+        name: 'home',
         props: {
-            page: 'https://newsapi.org/v2/top-headlines?country=pl&apiKey=1a35f1130398454d8244a1d7092ddcd6'
+            page: ''
         }
     },
     {
         path: '/tech',
         component: newsPage,
-        name: 'Technology',
+        name: 'technology',
         props: {
-            page: 'https://newsapi.org/v2/top-headlines?country=pl&category=technology&apiKey=1a35f1130398454d8244a1d7092ddcd6'
+            page: 'technology'
         }
     },
     {
         path: '/science',
         component: newsPage,
-        name: 'Science',
+        name: 'science',
         props: {
-            page: 'https://newsapi.org/v2/top-headlines?country=pl&category=science&apiKey=1a35f1130398454d8244a1d7092ddcd6'
+            page: 'science'
         }
     },
+    {
+        path: '/search/:keywords',
+        component: searchResults,
+        name: 'search-results'
+    }
 ]       

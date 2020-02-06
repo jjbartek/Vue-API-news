@@ -20,15 +20,40 @@ a {
     &__wrapper {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &__content {
         flex: 1;
         margin-right: 50px;
+
+        @media #{$medium-screens} {
+            flex-basis: 100%;
+            margin-right: 0;
+        }
     }
 
     &__side-bar {
         width: 25%;
         max-width: 345px;
+
+        @media #{$medium-screens} {
+            flex-basis: 100%;
+            width: auto;
+            max-width: unset;
+        }
+    }
+}
+
+.headline {
+    &--page-title {
+        color: #35495e;
+        font-weight: 200;
+
+        i {
+            color: #41b883;
+            margin-right: 16px;
+            font-weight: 900;
+        }
     }
 }

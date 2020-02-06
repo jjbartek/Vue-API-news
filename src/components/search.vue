@@ -1,28 +1,57 @@
 <template>
     <div>
         <div class="search-box">
-            <input type="text" class="search-box__field" placeholder="Enter keywords..">
-            <button class="search-box__button"><i class="fas fa-search"></i></button>
+            <div class="search-box__head">Search articles</div>
+            <div class="search-box__container">
+                <input
+                    type="text"
+                    class="search-box__field input"
+                    v-model="keywords"
+                    placeholder="Enter keywords..">
+                <router-link 
+                    class="search-box__button button button--green"
+                    :to="{ name: 'search-results', params: { keywords: keywords } }"
+                    tag="button">
+                    <i class="fas fa-search"></i>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-
+export default {
+    data() {
+        return {
+           keywords: ''
+        }
+    }
+}
 </script>
 
 <style lang="scss">
     .search-box {
         display: flex;
-        align-content: center;
-        margin-bottom: 30px;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 3px;
+        box-sizing: border-box;
+        padding: 20px;
+
+        &__head {
+            color: #938b8b;
+            margin-bottom: 15px;
+        }
+
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
         &__field {
             flex: 1;
             margin-right: 10px;
-            background: #fff;
-            padding: 20px;
-            font-size: 17px;
         }
 
         &__button {
