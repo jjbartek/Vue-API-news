@@ -1,5 +1,7 @@
 # vue-news
 
+Preview: https://vue-news-d7a84.firebaseapp.com/
+
 ## Project setup
 ```
 npm install
