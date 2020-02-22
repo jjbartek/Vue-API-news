@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import NewsBit from '@/components/newsBit'
-import Error from '@/components/error'
+import NewsBit from '@/components/news/newsBit'
+import Error from '@/components/elements/error'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {

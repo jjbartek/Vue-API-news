@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Loader from '@/components/loader'
+import Loader from '@/components/elements/loader'
 import { mapActions, mapState, mapGetters } from 'vuex' 
 
 export default {

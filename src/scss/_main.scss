@@ -52,14 +52,19 @@ a {
 }
 
 .headline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
     &--page-title {
         color: #35495e;
         font-weight: 200;
+    }
 
-        i {
-            color: #41b883;
-            margin-right: 16px;
-            font-weight: 900;
-        }
+    &__icon {
+        color: #41b883;
+        margin-right: 16px;
+        font-weight: 900;
     }
 }

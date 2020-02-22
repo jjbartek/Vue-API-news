@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Header from "@/components/header";
+import Header from '@/components/layout/header';
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     Header
   }
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "scss/_helpers";
-@import "scss/form";
-@import "scss/main";
+@import 'scss/_helpers';
+@import 'scss/form';
+@import 'scss/main';
 </style>

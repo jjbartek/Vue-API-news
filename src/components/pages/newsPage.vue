@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import NewsList from "@/components/newsList"
-import Browsing from "@/components/browsing"
-import Loader from "@/components/loader"
-import Sidebar from "@/components/sidebar"
-import { mapGetters, mapState, mapActions } from "vuex"
+import NewsList from '@/components/news/newsList'
+import Browsing from '@/components/news/browsing'
+import Loader from '@/components/elements/loader'
+import Sidebar from '@/components/elements/sidebar'
+import { mapGetters, mapState, mapActions } from 'vuex'
 
 export default {
     props: ['page'],

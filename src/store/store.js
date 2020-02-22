@@ -5,7 +5,9 @@ import actions from './actions'
 import getters from './getters'
 import mutations from './mutations'
 
-Vue.use(Vuex);
+import { apiKey } from './apiKey'
+
+Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
@@ -14,7 +16,7 @@ export const store = new Vuex.Store({
       keywords: ''
     },
     apiUrl: "https://newsapi.org/v2",
-    apiKey: '1a35f1130398454d8244a1d7092ddcd6',
+    apiKey,
     loadingStatus: false,
     browsingMode: false,
     browsingData: {},
@@ -23,4 +25,4 @@ export const store = new Vuex.Store({
   actions,
   getters,
   mutations
-});
+})

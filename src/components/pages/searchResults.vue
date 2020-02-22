@@ -1,7 +1,13 @@
 <template>
   <div class="wrapper page__wrapper">
     <div class="page__content page__content--full-width">
-        <h1 class="headline--page-title"><i class="fas fa-search"></i> Search results</h1>
+        <h1 class="headline headline--has-search headline--page-title">
+            <span class="headline__the-title"><i class="headline__icon fas fa-search"></i> Search results</span>
+            <Search
+                class="headline__search"
+                :old-value="$route.params.keywords"
+                :simple-search="true"></Search>
+        </h1>
         <Browsing v-if="browsingMode" v-body-scroll-lock="browsingMode"></Browsing>
         <NewsList v-if="!isLoading"></NewsList>
         <Loader :loading="isLoading"></Loader>
@@ -10,9 +16,10 @@
 </template>
 
 <script>
-import NewsList from '@/components/newsList'
-import Browsing from '@/components/browsing'
-import Loader from '@/components/loader'
+import NewsList from '@/components/news/newsList'
+import Browsing from '@/components/news/browsing'
+import Loader from '@/components/elements/loader'
+import Search from '@/components/elements/search'
 import { mapGetters, mapState, mapActions } from 'vuex'
 
 export default {
@@ -47,7 +54,7 @@ export default {
         }
     },
     components: {
-        NewsList, Browsing, Loader
+        NewsList, Browsing, Loader, Search
     }
 }
 </script>
