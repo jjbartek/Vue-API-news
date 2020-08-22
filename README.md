@@ -1,6 +1,8 @@
 # vue-news
+Vue-news retrieves news from [NEWS API](https://newsapi.org/) and serves them into 3 categories: Poland, Technology and Science.
+Besides, the application allows to search top news headlines.
 
-Preview: https://vue-news-d7a84.firebaseapp.com/
+For the application to work, the generated API key from NEWS API must be returned in: src/store/apiKey.js
 
 ## Project setup
 ```
